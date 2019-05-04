@@ -9,7 +9,7 @@ body {
 }
 
 h1,
-ul > li {
+ul>li {
   border: 1px solid #ddd;
   border-radius: 5px;
 }
@@ -27,7 +27,7 @@ ul {
   padding: 0;
 }
 
-ul > li {
+ul>li {
   margin-bottom: 7px;
   padding: 7px 10px;
   cursor: pointer;
@@ -48,4 +48,17 @@ ul > li {
 
 #btn.disabled {
   opacity: 0.5;
+}
+
+.correct {
+  color: limegreen;
+  font-weight: bold;
+}
+
+.wrong {
+  color: #ddd;
+}
+
+.selected {
+  font-weight: bold;
 }
