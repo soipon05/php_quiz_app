@@ -27,6 +27,11 @@ class Quiz
         return count($this->_quizSet) === $_SESSION['current_num'];
     }
 
+    public function isLast()
+    {
+        return count($this->_quizSet) === $_SESSION['current_num'] + 1;
+    }
+
     public function reset()
     {
         $_SESSION['current_num'] = 0;
