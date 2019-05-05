@@ -2,6 +2,7 @@
 
 require_once(__DIR__ . '/config.php');
 require_once(__DIR__ . '/Quiz.php');
+require_once(__DIR__ . '/Token.php');
 
 $quiz = new MyApp\Quiz();
 if (!$quiz->isFinished()) {
@@ -29,7 +30,7 @@ if (!$quiz->isFinished()) {
         <div id="container">
             <div id="result">
                 Your score ...
-                <div>100%</div>
+                <div><?= h($quiz->getScore()); ?> %</div>
             </div>
             <a href="">
                 <div id="btn">Replay?</div>
@@ -45,6 +46,7 @@ if (!$quiz->isFinished()) {
                 <?php endforeach ?>
             </ul>
             <div id="btn" class="disabled"><?= $quiz->isLast() ? 'Show Result' : 'Next Question'; ?></div>
+            <input type="hidden" id="token" value="<?= h($_SESSION['token']); ?>">
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="quiz.js"></script>

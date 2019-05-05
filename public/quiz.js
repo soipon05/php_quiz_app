@@ -10,7 +10,7 @@ $(function () {
         var answer = $selected.text();
 
         $.post("/_answer.php", {
-
+            answer: answer
         }).done(function (res) {
             $('.answer').each(function () {
                 if ($(this).text() === res.correct_answer) {
